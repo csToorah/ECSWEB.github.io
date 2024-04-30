@@ -1,0 +1,635 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(116, 43,  61);
+    max-height: 90dvh;
+}
+
+section{
+    height: 98svh;
+    border: solid;
+    margin: 10px;
+    background-color: gray;
+    border-radius: 25px;
+}
+
+/* Header---------------------------------------------------------------------------------------------- */
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid;
+    border-radius: 25px;
+    height: 100px;
+    margin: 10px;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+header h3{
+    font-size: 1.1rem;
+}
+header .link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    height: 50px;
+    width: 100px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: rgb(116, 43,  61);
+
+}
+header .link:active{
+    background-color: gray;
+}
+header img{
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+    border: solid;
+    background-color: transparent;
+}
+
+/* Header---------------------------------------------------------------------------------------------- */
+
+/* Mains---------------------------------------------------------------------------------------------- */
+
+main{
+    display: grid;
+    grid-template-areas: 'announcements about'
+                        'officers about';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    min-height: 83dvh;
+    grid-gap: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+.heading{
+    border-bottom: solid;
+    width: 97%;
+    height: 10%;
+    text-align: center;
+    margin: 10px;
+}
+.content{
+    width: 97%;
+    height: 90%;
+    margin: 5px;
+    display: grid;
+}
+    main .announcements{
+        grid-area: announcements;
+        min-width: 50%;
+    }
+        .announcements .content{
+            grid-template-areas: 'announcement-container upcoming-events'
+                                'announcement-container next-meeting';
+                                grid-template-columns: 3fr 1fr;
+                                grid-template-rows: 2fr 1fr;
+        }
+            .upcoming-events{
+                grid-area: upcoming-events;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: solid;
+                border-radius: 10px;
+                margin: 5px;
+                justify-content: space-around;
+                padding: 2px;
+                overflow: hidden;
+            }
+            .event{
+                border-bottom: solid;
+            }
+            .next-meeting{
+                grid-area: next-meeting;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                border: solid;
+                margin: 2.5px;
+                border-radius: 25px;
+            }
+        .announcement-container{
+            grid-area: announcement-container;
+            display: flex;
+            justify-content: center;
+        }
+        .announcement{
+            display: grid;
+            grid-template-areas: 'announce-name announce-date announce-time'
+                               'announce-message announce-message announce-message';
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr;
+            width: 95%;
+            height: 30%;
+            border-bottom: solid;
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+        }
+            .announce-name, .announce-date, .announce-time, .announce-message{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .announce-name{
+                grid-area: announce-name;
+                
+            }
+            .announce-date{
+                grid-area: announce-date;
+            }
+            .announce-time{
+                grid-area: announce-time;
+            }
+            .announce-message{
+                grid-area: announce-message;
+            }
+    main .officers{
+        grid-area: officers;
+    }
+            .officers .officers-container{
+                width: 97%;
+                height: 90%;
+                margin: 5px;
+                display: grid;
+            }
+            .officer{
+                display: grid;
+                grid-template-areas: 'oName oName oPortrait'
+                                    'oRole oRole oPortrait'
+                                    'oInfo oInfo oPortrait';
+                border: solid;
+                width: 33%;
+                height: 25%;
+                margin: 5px;
+                border-radius: 10px;
+                padding: 5px;
+            }
+                .officer-name{
+                    grid-area: oName;
+                }
+                .officer-role{
+                    grid-area: oRole;
+                }
+                .officer-contactInfo{
+                    grid-area: oInfo;
+                }
+                .officer-portrait{
+                    grid-area: oPortrait;
+                    border: solid;
+                    width: 60px;
+                    height: 95%;
+                    border-radius: 25%;
+                    justify-self: center;
+                }
+    main .about{
+        grid-area: about;
+        text-align: center;
+    }   
+        .about > fieldset{
+            margin: 5px;
+            width: 80%;
+            border: solid;
+            border-radius: 25px;
+        }
+        .about fieldset legend{
+            border: solid;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .aboutUs p{
+            height: 10%;
+            padding: 15px;
+        }
+        .latest-project-container{
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .latest-project{
+            display: grid;
+            grid-template-areas: 'LPName LPImg'
+                                'LPDescrip LPImg';
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 2fr;
+            height: 99%;
+            width: 95%;
+            grid-gap: 10px;
+        }
+            .latest-project-name{
+                grid-area: LPName;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .latest-project-descrip{
+                grid-area: LPDescrip;
+                padding: 10px;
+            }
+            .latest-project-img{
+                grid-area: LPImg;
+                width: 100%;
+                align-self: center;
+            }
+            
+        .join-container{
+            height: 30%;
+        }
+        .about .joinusForm{
+            border-radius: 25px;
+            display: grid;
+            grid-template-areas:
+                                'nameInfo'
+                                'miscInfo'
+                                'finalQuestions';
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr 1fr;
+            height: 100%;
+        }
+            .joinusForm div input{
+                font-size: 1rem;
+                border-radius: 7px;
+            }
+            .nameInfo{
+                grid-area: nameInfo;
+            }
+            .miscInfo{
+                grid-area: miscInfo;
+            }
+                .nameInfo input, .miscInfo input, #discordUsername{
+                    width: 30%;
+                    height: 50%;
+                    padding: 2px;
+                    border-color: none;
+                    border-width: 0px;
+                    text-align: center;
+                    margin: 10px;
+                }
+            .finalQuestions{
+                grid-area: finalQuestions;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-right: auto;
+                margin-left: auto;
+                width: 80%;
+            }
+                #discordChoices{
+                    display: flex;
+                    flex-direction: column;
+                }
+                    .yesNoChoices{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .yesNoChoices div{
+                        margin: auto;
+                    }
+            .submitButton{
+                width: 100px;
+                border-radius: 50px;
+                border-color: none;
+                border-width: 0px;
+                padding: 5px;
+            }
+                .submitButton:active{
+                    background-color: rgb(116, 43,  61);
+                    color: white;
+                    border: 1px solid;
+                }
+    main > div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: solid;
+        border-radius: 25px;
+        margin: 0px;
+        background-color: rgb(120, 120, 120);
+    }
+
+/* Main---------------------------------------------------------------------------------------------- */
+
+/* Calendar------------------------------------------------------------------------------------------- */
+.calendar-selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calendar-section, .events-section{
+    width: 50%;
+    height: 95%;
+    padding: 10px;
+}
+    .calendar-section{
+        display: grid;
+        grid-template-areas: 'month-year-selector month-year-selector'
+                            'calendar calendar'
+                            'c-event c-event';
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3fr 2fr;
+        border-right: 5px solid;
+    }
+        .calendar-section > div{
+            padding: 10px;
+        }
+        .calendar-section h1{
+            font-size: 2rem;
+        }
+        .calendar-section button{
+            background-color: white;
+            border: none;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: 2rem;
+            border-radius: 50%;
+        }
+        .calendar-section button:hover{
+            background: darkgrey;
+        }
+        .arrow{
+            border: solid black;
+            border-width: 0px 3px 3px 0px;
+            display: inline-block;
+            padding: 3px;
+        }
+        .left{
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+        .right{
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        .month-year-selector{
+            grid-area: month-year-selector;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .c-month, .c-year{
+            display: flex;
+            justify-content: space-around;
+            width: 40%;
+            align-items: center;
+        }
+        .calendar{
+            border-top: solid;
+            border-bottom: solid;
+            grid-area: calendar;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .month{
+                border: solid;
+                width: 60%;
+                height: 100%;
+                padding: 10px;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-gap: 5px;
+            }
+                .c-day{
+                    border: solid;
+                    width: 90%;
+                    height: 90%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                }
+                .c-day:hover{
+                    background-color: darkgrey;
+                }
+                .c-day:active{
+                    background-color: rgb(211, 208, 208);
+                }
+        .c-event{
+            grid-area: c-event;
+        }
+        .e-event{
+            margin: 10px;
+            border: solid;
+            display: grid;
+            grid-template-areas: 'e-name e-description e-description'
+                                'e-location e-description e-description'
+                                'e-time e-description e-description'
+                                'e-date e-organizers e-organizers';
+            grid-template-columns: 1fr 3fr;
+            height: auto;
+            border-radius: 10px;
+            padding: 5px;
+            text-align: center;
+        }
+            .e-name{
+                grid-area: e-name;
+                margin: 2px;
+            }
+            .e-time{
+                grid-area: e-time;
+                margin: 2px;
+            }
+            .e-location{
+                grid-area: e-location;
+                flex-direction: column;
+                text-align: center;
+                margin: 2px;
+            }
+            .e-date{
+                grid-area: e-date;
+            }
+            .e-organizers{
+                grid-area: e-organizers;
+                display: flex;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: ce;
+            }
+                .e-organizer{
+                    border: solid;
+                    border-radius: 5px;
+                    margin: 2px;
+                    padding: 2px;
+                }
+            .e-description{
+                grid-area: e-description;
+            }
+/* Calendar------------------------------------------------------------------------------------------- */
+/* Projects------------------------------------------------------------------------------------------- */
+.projects-container{
+    display: flex;
+}
+    .project{
+        border: solid;
+        border-radius: 25px;
+        margin: 10px;
+        width: 50%;
+        display: grid;
+        grid-template-areas: 'pImgs pImgs'
+                            'contribBtn infoBtn'
+                            'pInfo pInfo';
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 55% 10% 35%;
+    }
+        .project-imgs-container{
+            grid-area: pImgs;
+            border: solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project li{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%
+        }
+        .project li img{
+            height: 95%;
+            object-fit: contain;
+        }
+        .project-contribBtn, .project-infoBtn{
+            width: 50%;
+            height: 50%;
+            justify-self: center;
+            align-self: center;
+            border-radius: 25px;
+            border: none;
+        }
+        .project-contribBtn{
+            grid-area: contribBtn;
+        }
+        .project-infoBtn{
+            grid-area: infoBtn;
+        }
+        .contributers-container{
+            grid-area: pInfo;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: start;
+            padding: 5px;
+            width: 100%;
+        }
+            .contributer{
+                border: solid;
+                padding: 5px;
+                margin: 5px;
+                width: auto;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+        .project-info-container{
+            grid-area: pInfo;
+            grid-template-areas: 'stats'
+                                'description';
+            grid-template-rows: 1fr 4fr;
+            justify-self: center;
+            width: 99%;
+            padding: 5px;
+        }
+            .info-stats{
+                grid-area: stats;
+                border: solid;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                height: 20%;
+            }
+            .info-description{
+                padding: 10px;
+                text-align: center;
+                border: solid;
+                height: 65%;
+            }
+/* Projects------------------------------------------------------------------------------------------- */
+
+/* Members------------------------------------------------------------------------------------------- */
+.member{
+    border: solid;
+    width: 25%;
+    height: 50%;
+    margin: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 'img info'
+                        'description description'
+                        'links links';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 30% 20%;
+}
+    .member > div{
+        margin: 10px;
+    }
+    .m-img{
+        grid-area: img;
+        border-right: solid;
+    }
+        
+    .m-info{
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+    }
+    .m-description{
+        border-top: solid;
+        grid-area: description;
+    }
+        .m-description p{
+            padding: 10px;
+        }
+    .m-links{
+        grid-area: links;
+        border: solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .m-links ul{
+            display: flex;
+            border: solid;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+            .m-links ul li{
+                list-style-type: none;
+                border: solid;
+                margin: 5px;
+                width: 90%;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+/* Members------------------------------------------------------------------------------------------- */
+
+
+
+
